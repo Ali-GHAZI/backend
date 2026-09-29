@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio and edited to untrack the .vs folder and other files that are not needed in source control.
+################################################################################
+
+# .NET build files
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# OS files
+.DS_Store
+Thumbs.db
