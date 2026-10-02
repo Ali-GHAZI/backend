@@ -57,6 +57,18 @@ namespace Infrastructure.Repositories
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Product>> SearchAsync(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return new List<Product>();
+
+            var key = name.Trim().ToLower();
+
+            return await _db.Products
+                            .Include(p => p.Images)
+                            .Where(p => p.Name != null && p.Name.ToLower().Contains(key))
+                            .ToListAsync();
+        }
+
         public async Task<List<string>> GetProductImageUrlsAsync(int productId)
         {
             return await _db.ProductImages
