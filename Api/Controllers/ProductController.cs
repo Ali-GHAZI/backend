@@ -21,6 +21,13 @@ namespace Api.Controllers
         public async Task<IActionResult> GetAll() =>
             Ok(await _service.GetAllAsync());
 
+        [HttpGet("search")]
+        public async Task<IActionResult> Search([FromQuery] string name)
+        {
+            var results = await _service.SearchAsync(name);
+            return Ok(results);
+        }
+
         //[HttpGet("{id}/images")]
         //public async Task<IActionResult> GetProductImages(int id)
         //{

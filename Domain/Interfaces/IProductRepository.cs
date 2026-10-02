@@ -12,6 +12,8 @@ namespace Domain.Interfaces
     {
         Task<IEnumerable<Product>> GetProductsBySubCategoryAsync(int categoryId);
 
+        Task<IEnumerable<Product>> SearchAsync(string name);
+
         Task<List<string>> GetProductImageUrlsAsync(int productId);
     }
 }

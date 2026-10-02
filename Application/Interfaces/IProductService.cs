@@ -10,6 +10,7 @@ namespace Application.Interfaces
     public interface IProductService
     {
         Task<IEnumerable<ProductDto>> GetAllAsync();
+        Task<IEnumerable<ProductDto>> SearchAsync(string name);
         Task<List<string>> GetProductImageUrlsAsync(int productId);
         Task<ProductDto?> GetByIdAsync(int id);
         Task<ProductDto> CreateAsync(ProductDto dto);

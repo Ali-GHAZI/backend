@@ -41,6 +41,12 @@ namespace Application.Services
             return _mapper.Map<ProductDto>(item);
         }
 
+        public async Task<IEnumerable<ProductDto>> SearchAsync(string name)
+        {
+            var items = await _repo.SearchAsync(name);
+            return _mapper.Map<IEnumerable<ProductDto>>(items);
+        }
+
         public async Task<ProductDto> CreateAsync(ProductDto dto)
         {
             var entity = _mapper.Map<Product>(dto);
